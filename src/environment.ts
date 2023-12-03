@@ -1,3 +1,3 @@
 export const environment = {
-    poemCount: 4,
+    poemCount: 7,
 };
