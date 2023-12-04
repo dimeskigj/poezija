@@ -1,3 +1,3 @@
 export const eventTags = {
-    appOpen: "app-open",
+    appOpen: "app_open",
 }
