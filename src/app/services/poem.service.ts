@@ -31,7 +31,11 @@ export class PoemService {
       hash |= 0;
     }
 
-    const currentDayOfYear = new Date().getFullYear() % 4 == 0 ? 366 : 365;
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = (now.valueOf() - start.valueOf()) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+    const oneDay = 1000 * 60 * 60 * 24;
+    const currentDayOfYear = Math.floor(diff / oneDay);
 
     return Math.abs(hash + currentDayOfYear) % POEM_COUNT;
   }
