@@ -10,5 +10,7 @@
     }
 </div>
 <div class="flex justify-center" *ngIf="!hasSeenNotice">
-    <app-notice class="fixed bottom-0 sm:bottom-8" (onClose)="onNoticeClosed()"></app-notice>
+    <app-notice class="fixed bottom-0 sm:bottom-8" (onClose)="onNoticeClosed()">
+        Секој ден добиваш различна поема, дојди утре пак!
+    </app-notice>
 </div>
