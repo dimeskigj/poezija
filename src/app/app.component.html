@@ -1,8 +1,8 @@
 <div class="min-h-[100dvh] flex flex-col items-stretch md:items-center justify-center px-4 sm:px-8 lg:px-16 py-4 sm:py-8">
     @if(poemHtml) {
-    <article class="prose lg:prose-xl" [innerHTML]="poemHtml"></article>
-    <div class="self-center" [class.py-20]="!hasSeenNotice" [class.py-8]="hasSeenNotice">Направено со 💜 -
-        <a href="https://github.com/dimeskigj/poezija/" class="text-violet-500">изворен код</a>.
+    <article class="prose prose-slate lg:prose-xl dark:prose-invert" [innerHTML]="poemHtml"></article>
+    <div class="text-slate-900 dark:text-slate-100 self-center" [class.py-20]="!hasSeenNotice" [class.py-8]="hasSeenNotice">Направено со 💜 -
+        <a href="https://github.com/dimeskigj/poezija/" class="text-violet-500 dark:text-violet-300">изворен код</a>.
     </div>
     }
     @else {
