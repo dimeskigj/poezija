@@ -1,7 +1,7 @@
-<div class="min-h-screen flex flex-col items-stretch md:items-center justify-center mx-4 sm:mx-8 lg:mx-16 my-4 sm:my-8">
+<div class="min-h-[100dvh] flex flex-col items-stretch md:items-center justify-center px-4 sm:px-8 lg:px-16 py-4 sm:py-8">
     @if(poemHtml) {
     <article class="prose lg:prose-xl" [innerHTML]="poemHtml"></article>
-    <div class="my-16 self-center">Направено со 💜 -
+    <div class="self-center" [class.py-20]="!hasSeenNotice" [class.py-8]="hasSeenNotice">Направено со 💜 -
         <a href="https://github.com/dimeskigj/poezija/" class="text-violet-500">изворен код</a>.
     </div>
     }
@@ -9,8 +9,8 @@
     <div class="spinner self-center"></div>
     }
 </div>
-<div class="flex justify-center" *ngIf="!hasSeenNotice">
-    <app-notice class="fixed bottom-0 sm:bottom-8" (onClose)="onNoticeClosed()">
-        Секој ден добиваш различна поема, дојди утре пак!
+<div class="flex justify-center w-full sm:w-auto" *ngIf="!hasSeenNotice">
+    <app-notice class="fixed bottom-0 sm:bottom-8 w-full sm:w-auto" (onClose)="onNoticeClosed()">
+        Можеш да дојдеш утре за нова поема!
     </app-notice>
 </div>
