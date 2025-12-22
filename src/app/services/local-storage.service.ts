@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export const HAS_SEEN_NOTICE = "has_seen_notice";
+export const THEME_KEY = "theme";
 
 @Injectable({
   providedIn: 'root'

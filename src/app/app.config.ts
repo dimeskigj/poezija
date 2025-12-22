@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    importProvidersFrom(provideFirebaseApp(() => initializeApp(
+    provideFirebaseApp(() => initializeApp(
       {
         "projectId": "poezija-mk",
         "appId": "1:292730192537:web:c23f0b4552ad9bc3342e08",
@@ -19,8 +19,8 @@ export const appConfig: ApplicationConfig = {
         "authDomain": "poezija-mk.firebaseapp.com",
         "messagingSenderId": "292730192537",
         "measurementId": "G-83R63L9RGZ"
-      }))),
-    importProvidersFrom(provideAnalytics(() => getAnalytics())),
+      })),
+    provideAnalytics(() => getAnalytics()),
     ScreenTrackingService,
   ]
 };

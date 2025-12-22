@@ -31,3 +31,15 @@
         transform: rotate(1turn);
     }
 }
+
+.poem-article h1,
+.poem-article h2,
+.poem-article h3 {
+  @apply text-violet-600;
+}
+
+.dark .poem-article h1,
+.dark .poem-article h2,
+.dark .poem-article h3 {
+  @apply text-violet-400;
+}

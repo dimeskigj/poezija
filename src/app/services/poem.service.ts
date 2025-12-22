@@ -12,7 +12,11 @@ export class PoemService {
   constructor(private http: HttpClient) { }
 
   getDailyPoem(): Observable<string> {
-    const index = this.getPoemIndexFromUserAgentAndDate();
+    const index = this.getDailyPoemIndex();
+    return this.getPoem(index);
+  }
+
+  getPoem(index: number): Observable<string> {
     return this.http.get(`markdown/poema.${index}.md`, { responseType: 'text' });
   }
 
@@ -21,7 +25,7 @@ export class PoemService {
   * 
   * Hence, there will be a new poem every day, and on different user agents.
   */
-  private getPoemIndexFromUserAgentAndDate() {
+  public getDailyPoemIndex() {
     const userAgent = window.navigator.userAgent;
 
     let hash = 0;
