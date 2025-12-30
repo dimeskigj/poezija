@@ -1,19 +1,19 @@
-import fs from 'node:fs';
-import path from 'node:path';
-
-const POEMS_DIR = path.resolve('src/lib/poems');
+const poemFiles = import.meta.glob('../poems/*.md', {
+	query: '?raw',
+	import: 'default',
+	eager: true
+});
 
 export function getPoemCount(): number {
-	const files = fs.readdirSync(POEMS_DIR);
-	return files.filter((file) => file.endsWith('.md')).length;
+	return Object.keys(poemFiles).length;
 }
 
 export function getPoem(index: number): string {
-	const filePath = path.join(POEMS_DIR, `poema.${index}.md`);
-	if (!fs.existsSync(filePath)) {
+	const key = `../poems/poema.${index}.md`;
+	if (!(key in poemFiles)) {
 		throw new Error(`Poem ${index} not found`);
 	}
-	return fs.readFileSync(filePath, 'utf-8');
+	return poemFiles[key] as string;
 }
 
 export function getDailyPoemIndex(userAgent: string): number {
