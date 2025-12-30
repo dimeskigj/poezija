@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fly, scale, fade } from 'svelte/transition';
+	import { backOut, elasticOut } from 'svelte/easing';
 	import { theme } from '$lib/theme.svelte';
 	import Notice from '$lib/components/Notice.svelte';
 	import ShareableImage from '$lib/components/ShareableImage.svelte';
-	import { Sun, Moon, Copy, Check, Flame, Image } from 'lucide-svelte';
+	import { Sun, Moon, Copy, Check, Flame, Share } from 'lucide-svelte';
 	import { browser } from '$app/environment';
 	import { logAppOpen } from '$lib/services/analytics';
 	import { StreakService } from '$lib/services/streak';
@@ -56,11 +58,14 @@
 	<div class="fixed top-4 right-4 z-50 flex items-center gap-3">
 		{#if streak > 0}
 			<div
+				in:scale={{ duration: 1000, delay: 400, easing: elasticOut, start: 0.3 }}
 				class="flex items-center gap-1 rounded-full border border-orange-200 bg-orange-50/80 px-4 py-3 text-sm font-bold text-orange-600 shadow-sm backdrop-blur-sm dark:border-orange-900/50 dark:bg-orange-950/50 dark:text-orange-400"
 				title="{streak} дена по ред читаш!"
 			>
-				<Flame class="h-5 w-5 animate-pulse fill-orange-600 text-orange-500" />
-				<span>{streak}</span>
+				<span in:fly={{ y: 20, duration: 800, delay: 600, easing: backOut }}>
+					<Flame class="h-5 w-5 animate-pulse fill-orange-600 text-orange-500" />
+				</span>
+				<span in:fly={{ y: 20, duration: 800, delay: 750, easing: backOut }}>{streak}</span>
 			</div>
 		{/if}
 
@@ -70,7 +75,7 @@
 			aria-label="Create shareable image"
 			title="Сподели како слика"
 		>
-			<Image class="h-5 w-5" />
+			<Share class="h-5 w-5" />
 		</button>
 
 		<button
@@ -138,7 +143,10 @@
 	</footer>
 
 	{#if !hasSeenNotice}
-		<div class="pointer-events-none fixed right-0 bottom-4 left-0 flex justify-center px-4">
+		<div
+			transition:fly={{ y: 20, duration: 400 }}
+			class="pointer-events-none fixed right-0 bottom-4 left-0 flex justify-center px-4"
+		>
 			<div class="pointer-events-auto">
 				<Notice onclose={onNoticeClosed}>Можеш да дојдеш утре за нова поема!</Notice>
 			</div>
