@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { theme } from '$lib/theme.svelte';
 	import Notice from '$lib/components/Notice.svelte';
-	import { Sun, Moon, Copy, Check, Flame } from 'lucide-svelte';
+	import ShareableImage from '$lib/components/ShareableImage.svelte';
+	import { Sun, Moon, Copy, Check, Flame, Image } from 'lucide-svelte';
 	import { browser } from '$app/environment';
 	import { logAppOpen } from '$lib/services/analytics';
 	import { StreakService } from '$lib/services/streak';
@@ -13,6 +14,7 @@
 	let hasSeenNotice = $state(true);
 	let isCopied = $state(false);
 	let streak = $state(0);
+	let showShareableImage = $state(false);
 
 	onMount(() => {
 		logAppOpen();
@@ -61,6 +63,15 @@
 				<span>{streak}</span>
 			</div>
 		{/if}
+
+		<button
+			onclick={() => (showShareableImage = true)}
+			class="rounded-full border border-slate-200 bg-white/80 p-3 shadow-lg backdrop-blur-sm transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:bg-slate-700"
+			aria-label="Create shareable image"
+			title="Сподели како слика"
+		>
+			<Image class="h-5 w-5" />
+		</button>
 
 		<button
 			onclick={() => theme.toggle()}
@@ -132,5 +143,13 @@
 				<Notice onclose={onNoticeClosed}>Можеш да дојдеш утре за нова поема!</Notice>
 			</div>
 		</div>
+	{/if}
+
+	{#if showShareableImage}
+		<ShareableImage
+			poemHtml={data.poemHtml}
+			poemIndex={data.poemIndex}
+			onclose={() => (showShareableImage = false)}
+		/>
 	{/if}
 </div>
