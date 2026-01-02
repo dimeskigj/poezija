@@ -10,6 +10,7 @@
 	import { logAppOpen } from '$lib/services/analytics';
 	import { StreakService } from '$lib/services/streak';
 	import { STORAGE_KEYS } from '$lib/constants';
+	import { getStreakText } from '$lib/utils';
 
 	let { data } = $props();
 
@@ -60,7 +61,7 @@
 			<div
 				in:scale={{ duration: 1000, delay: 400, easing: elasticOut, start: 0.3 }}
 				class="flex items-center gap-1 rounded-full border border-orange-200 bg-orange-50/80 px-4 py-3 text-sm font-bold text-orange-600 shadow-sm backdrop-blur-sm dark:border-orange-900/50 dark:bg-orange-950/50 dark:text-orange-400"
-				title="{streak} дена по ред читаш!"
+				title={getStreakText(streak)}
 			>
 				<span in:fly={{ y: 20, duration: 800, delay: 600, easing: backOut }}>
 					<Flame class="h-5 w-5 animate-pulse fill-orange-600 text-orange-500" />

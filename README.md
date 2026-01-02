@@ -19,6 +19,7 @@
 - Константин Миладинов
     - [Бисера](src/lib/poems/poema.1.md)
     - [Желание](src/lib/poems/poema.5.md)
+    - [Т'га за југ](src/lib/poems/poema.8.md)
 
 - Кочо Рацин
     - [Денови](src/lib/poems/poema.4.md)
