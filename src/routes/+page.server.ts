@@ -2,9 +2,8 @@ import { getDailyPoemIndex, getPoem, getPoemCount } from '$lib/server/poems';
 import type { PageServerLoad } from './$types';
 import { marked } from 'marked';
 
-export const load: PageServerLoad = async ({ url, request }) => {
+export const load: PageServerLoad = async ({ url }) => {
 	const idParam = url.searchParams.get('id');
-	const userAgent = request.headers.get('user-agent') || '';
 
 	let index: number;
 	const count = getPoemCount();
@@ -12,7 +11,7 @@ export const load: PageServerLoad = async ({ url, request }) => {
 	if (idParam !== null && !isNaN(Number(idParam))) {
 		index = Number(idParam) % count;
 	} else {
-		index = getDailyPoemIndex(userAgent);
+		index = getDailyPoemIndex();
 	}
 
 	const md = getPoem(index);

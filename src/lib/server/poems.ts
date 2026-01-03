@@ -16,23 +16,20 @@ export function getPoem(index: number): string {
 	return poemFiles[key] as string;
 }
 
-export function getDailyPoemIndex(userAgent: string): number {
-	let hash = 0;
-	for (let i = 0; i < userAgent.length; i++) {
-		const chr = userAgent.charCodeAt(i);
-		hash = (hash << 5) - hash + chr;
-		hash |= 0;
-	}
+export function getDailyPoemIndex(): number {
+	const START_DATE = Date.UTC(2024, 4, 20); // May 20, 2024
+	const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 	const now = new Date();
-	const start = new Date(now.getFullYear(), 0, 0);
-	const diff =
-		now.valueOf() -
-		start.valueOf() +
-		(start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
-	const oneDay = 1000 * 60 * 60 * 24;
-	const currentDayOfYear = Math.floor(diff / oneDay);
+	const cetDateString = now.toLocaleDateString('en-GB', { timeZone: 'Europe/Skopje' });
+	const [day, month, year] = cetDateString.split('/').map(Number);
+	const todayCet = Date.UTC(year, month - 1, day);
 
-	const count = getPoemCount();
-	return Math.abs(hash + currentDayOfYear) % count;
+	const daysSinceStart = Math.floor((todayCet - START_DATE) / MS_PER_DAY);
+
+	const currentCount = getPoemCount();
+	const INITIAL_POEM_COUNT = 9;
+	const offset = currentCount - INITIAL_POEM_COUNT;
+
+	return (daysSinceStart + offset) % currentCount;
 }
