@@ -95,8 +95,70 @@
 	<main class="mx-auto w-full max-w-3xl grow px-6 py-16 sm:px-8 sm:py-24 lg:px-12">
 		{#if data.poemHtml}
 			<article class="poem-article mx-auto prose prose-slate lg:prose-xl dark:prose-invert">
+				<h1 class="mb-8 text-left text-3xl font-bold tracking-tight">
+					{data.metadata.title}
+				</h1>
+
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html data.poemHtml}
+
+				<div
+					class="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400"
+				>
+					<p class="mb-2">
+						<span class="font-semibold">Автор:</span>
+						{#if data.metadata.authorUrl}
+							<a
+								href={data.metadata.authorUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-violet-600 hover:underline dark:text-violet-400"
+							>
+								{data.metadata.author}
+							</a>
+						{:else}
+							{data.metadata.author}
+						{/if}
+					</p>
+
+					<div class="flex flex-wrap gap-x-6 gap-y-2">
+						{#if data.metadata.source}
+							<span>
+								<span class="font-semibold">Извор:</span>
+								{#if data.metadata.sourceUrl}
+									<a
+										href={data.metadata.sourceUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-violet-600 hover:underline dark:text-violet-400"
+									>
+										{data.metadata.source}
+									</a>
+								{:else}
+									{data.metadata.source}
+								{/if}
+							</span>
+						{/if}
+
+						{#if data.metadata.license}
+							<span>
+								<span class="font-semibold">Лиценца:</span>
+								{#if data.metadata.licenseUrl}
+									<a
+										href={data.metadata.licenseUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-violet-600 hover:underline dark:text-violet-400"
+									>
+										{data.metadata.license}
+									</a>
+								{:else}
+									{data.metadata.license}
+								{/if}
+							</span>
+						{/if}
+					</div>
+				</div>
 			</article>
 
 			<div class="mt-12 flex justify-start">
@@ -128,7 +190,7 @@
 		>
 			<h4 class="mb-4 text-start text-xl text-slate-700 dark:text-slate-200">За апликацијата ✒️</h4>
 			<p class="mb-4 text-start">
-				Ова е едноставна апликација која прикажува иста поема за сите секој ден. Визијата е да се
+				Ова е едноставна апликација која прикажува случајна поема секој ден. Визијата е да се
 				споделуваат македонски поеми во едноставен формат со цел да се поттикне читањето (и некому
 				да се разубави денот).
 			</p>
@@ -158,6 +220,7 @@
 		<ShareableImage
 			poemHtml={data.poemHtml}
 			poemIndex={data.poemIndex}
+			metadata={data.metadata}
 			onclose={() => (showShareableImage = false)}
 		/>
 	{/if}

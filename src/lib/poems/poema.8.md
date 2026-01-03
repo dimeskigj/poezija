@@ -1,4 +1,11 @@
-## Т'га за југ
+---
+title: Т'га за југ
+author: Константин Миладинов
+authorUrl: https://mk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2
+source: Wikisource - Т'га за југ
+sourceUrl: https://mk.wikisource.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2/_%D0%A2%E2%80%99%D0%B3%D0%B0_%D0%B7%D0%B0_%D1%98%D1%83%D0%B3
+license: Public Domain
+---
 
 Орелски крилја как да си метнех\
 и в наши стâрни да си прелетнех!\
@@ -42,10 +49,3 @@
 
 Тамо по срце в кавал да свирам,\
 сâнце да зајдвит, ја да умирам!
-
-#### [Константин Миладинов](https://mk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2)
-
----
-
-Извор: [Wikisource - Т'га за југ](https://mk.wikisource.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2/_%D0%A2%E2%80%99%D0%B3%D0%B0_%D0%B7%D0%B0_%D1%98%D1%83%D0%B3)\
-Сите дела од овој автор се во јавна сопственост во целиот свет

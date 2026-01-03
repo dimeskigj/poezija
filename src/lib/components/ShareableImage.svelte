@@ -8,10 +8,15 @@
 	interface Props {
 		poemHtml: string;
 		poemIndex: number;
+		metadata: {
+			title: string;
+			author: string;
+			[key: string]: any;
+		};
 		onclose: () => void;
 	}
 
-	let { poemHtml, poemIndex, onclose }: Props = $props();
+	let { poemHtml, poemIndex, metadata, onclose }: Props = $props();
 
 	let cardRef: HTMLDivElement | undefined = $state();
 	let themeIndex = $state(untrack(() => poemIndex % THEMES.length));
@@ -139,7 +144,15 @@
 							? 'prose-invert'
 							: ''} prose-base sm:prose-lg md:prose-xl prose-headings:mb-4 prose-headings:text-left prose-p:mb-4 prose-p:text-left prose-p:leading-relaxed"
 					>
+						<h1 class="mb-6 mt-2 text-left text-2xl font-bold tracking-tight">
+							{metadata.title}
+						</h1>
+
 						{@html poemHtml}
+
+						<div class="mt-8 text-right">
+							<p class="text-base font-medium italic sm:text-lg">— {metadata.author}</p>
+						</div>
 					</div>
 					<div
 						class="absolute right-0 -bottom-1 left-0 h-32 bg-linear-to-t {currentTheme.fade}"

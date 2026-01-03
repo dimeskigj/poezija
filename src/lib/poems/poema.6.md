@@ -1,4 +1,12 @@
-## Тешкото
+---
+title: Тешкото
+author: Блаже Конески
+authorUrl: https://mk.wikipedia.org/wiki/%D0%91%D0%BB%D0%B0%D0%B6%D0%B5_%D0%9A%D0%BE%D0%BD%D0%B5%D1%81%D0%BA%D0%B8
+source: Wikisource - Тешкото
+sourceUrl: https://mk.wikisource.org/wiki/%D0%A2%D0%B5%D1%88%D0%BA%D0%BE%D1%82%D0%BE
+license: Creative Commons Attribution-ShareAlike (CC BY-SA)
+licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.en
+---
 
 О тешкото! Зурли штом диво ќе писнат,\
 штом тапан ќе грмне со подземен екот -\
@@ -80,10 +88,3 @@
 но носиш ти в срце дар златен и пој.\
 Пченицата твоја триж плодна ќе биде,\
 И животот твој!
-
-#### [Блаже Конески](https://mk.wikipedia.org/wiki/%D0%91%D0%BB%D0%B0%D0%B6%D0%B5_%D0%9A%D0%BE%D0%BD%D0%B5%D1%81%D0%BA%D0%B8)
-
----
-
-Извор: [Wikisource - Тешкото](https://mk.wikisource.org/wiki/%D0%A2%D0%B5%D1%88%D0%BA%D0%BE%D1%82%D0%BE)\
-Лиценца: [Creative Commons Attribution-ShareAlike (CC BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/deed.en)

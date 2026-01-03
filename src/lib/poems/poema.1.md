@@ -1,4 +1,11 @@
-## Бисера
+---
+title: Бисера
+author: Константин Миладинов
+authorUrl: https://mk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2
+source: Wikisource - Бисера
+sourceUrl: https://mk.wikisource.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2/_%D0%91%D0%B8%D1%81%D0%B5%D1%80%D0%B0
+license: Public Domain
+---
 
 Бисеро моме, Бисеро,\
 што носиш бисер на грло?\
@@ -17,10 +24,3 @@
 За кого готвиш дарои?\
 Ја дарој бисер не сака,\
 тук сака мома Бисера.
-
-#### [Константин Миладинов](https://mk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2)
-
----
-
-Извор: [Wikisource - Бисера](https://mk.wikisource.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9C%D0%B8%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2/_%D0%91%D0%B8%D1%81%D0%B5%D1%80%D0%B0)\
-Сите дела од овој автор се во јавна сопственост во целиот свет
