@@ -55,17 +55,21 @@
 
 <svelte:head>
 	<title>{data.metadata.title} - {data.metadata.author}</title>
-	<meta name="description" content={data.snippet} />
-	{#if data.isSpecificShared}
-		<meta property="og:image" content="/api/og?id={data.poemIndex}" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="{data.metadata.title} - {data.metadata.author}" />
-		<meta property="og:description" content={data.snippet} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="{data.metadata.title} - {data.metadata.author}" />
-		<meta name="twitter:description" content={data.snippet} />
-		<meta name="twitter:image" content="/api/og?id={data.poemIndex}" />
-	{/if}
+	<meta name="description" content={data.snippet.replace(/\n/g, ' ')} />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content={data.isSpecificShared ? `?id=${data.poemIndex}` : '/'} />
+	<meta property="og:title" content="{data.metadata.title} - {data.metadata.author}" />
+	<meta property="og:description" content={data.snippet.replace(/\n/g, ' ')} />
+	<meta property="og:image" content={data.isSpecificShared ? `/api/og?id=${data.poemIndex}` : '/og_image.png'} />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={data.isSpecificShared ? `?id=${data.poemIndex}` : '/'} />
+	<meta name="twitter:title" content="{data.metadata.title} - {data.metadata.author}" />
+	<meta name="twitter:description" content={data.snippet.replace(/\n/g, ' ')} />
+	<meta name="twitter:image" content={data.isSpecificShared ? `/api/og?id=${data.poemIndex}` : '/og_image.png'} />
 </svelte:head>
 
 <div
