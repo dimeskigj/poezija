@@ -14,7 +14,20 @@
     - [Тајна](src/lib/poems/poema.7.md)
 
 - Блаже Конески
+    - [Везилка](src/lib/poems/poema.14.md)
     - [Тешкото](src/lib/poems/poema.6.md)
+
+- Гане Тодоровски
+    - [Дојди в Охрид](src/lib/poems/poema.15.md)
+
+- Кирил Пејчиновиќ
+    - [Епитаф](src/lib/poems/poema.16.md)
+
+- Коле Неделковски
+    - [Младост попарена](src/lib/poems/poema.13.md)
+    - [Пеш по светот - втора песна](src/lib/poems/poema.11.md)
+    - [Пеш по светот - прва песна](src/lib/poems/poema.10.md)
+    - [Ропство](src/lib/poems/poema.12.md)
 
 - Константин Миладинов
     - [Бисера](src/lib/poems/poema.1.md)
@@ -25,6 +38,7 @@
     - [Денови](src/lib/poems/poema.4.md)
     - [Копачите](src/lib/poems/poema.2.md)
     - [Ленка](src/lib/poems/poema.3.md)
+    - [Тутуноберачите](src/lib/poems/poema.9.md)
 
 - Петре М. Андреевски
     - [Умилкување](src/lib/poems/poema.0.md)
