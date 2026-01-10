@@ -1,7 +1,7 @@
-import { getDailyPoemIndex, getPoem, getPoemCount } from '$lib/server/poems';
+import { getDailyPoemIndex, getPoemCount } from '$lib/server/poems';
+import { getFullPoem } from '$lib/server/parser';
 import type { PageServerLoad } from './$types';
 import { marked } from 'marked';
-import matter from 'gray-matter';
 
 export const load: PageServerLoad = async ({ url }) => {
 	const idParam = url.searchParams.get('id');
@@ -15,24 +15,14 @@ export const load: PageServerLoad = async ({ url }) => {
 		index = getDailyPoemIndex();
 	}
 
-	const md = getPoem(index);
-	const { data, content } = matter(md);
-	const html = await marked.parse(content);
-
-	const metadata = data as {
-		title: string;
-		author: string;
-		authorUrl?: string;
-		source?: string;
-		sourceUrl?: string;
-		license?: string;
-		licenseUrl?: string;
-		[key: string]: any;
-	};
+	const poem = getFullPoem(index);
+	const html = await marked.parse(poem.content);
 
 	return {
 		poemHtml: html,
 		poemIndex: index,
-		metadata
+		metadata: poem.metadata,
+		snippet: poem.snippet,
+		isSpecificShared: idParam !== null
 	};
 };
