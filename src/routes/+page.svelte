@@ -105,7 +105,7 @@
 				<div
 					class="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400"
 				>
-					<p class="mb-2">
+					<p class="mb-2 text-md">
 						<span class="font-semibold">Автор:</span>
 						{#if data.metadata.authorUrl}
 							<a
