@@ -53,6 +53,21 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{data.metadata.title} - {data.metadata.author}</title>
+	<meta name="description" content={data.snippet} />
+	{#if data.isSpecificShared}
+		<meta property="og:image" content="/api/og?id={data.poemIndex}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="{data.metadata.title} - {data.metadata.author}" />
+		<meta property="og:description" content={data.snippet} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{data.metadata.title} - {data.metadata.author}" />
+		<meta name="twitter:description" content={data.snippet} />
+		<meta name="twitter:image" content="/api/og?id={data.poemIndex}" />
+	{/if}
+</svelte:head>
+
 <div
 	class="relative flex min-h-screen flex-col bg-linear-to-br from-white to-violet-50 text-slate-900 transition-colors duration-300 dark:from-slate-900 dark:to-slate-950 dark:text-slate-100"
 >
@@ -105,7 +120,7 @@
 				<div
 					class="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400"
 				>
-					<p class="mb-2 text-md">
+					<p class="text-xl mb-2">
 						<span class="font-semibold">Автор:</span>
 						{#if data.metadata.authorUrl}
 							<a

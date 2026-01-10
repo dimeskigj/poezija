@@ -16,8 +16,4 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Поезија</title>
-</svelte:head>
-
 {@render children()}
