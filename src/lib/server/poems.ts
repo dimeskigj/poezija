@@ -9,7 +9,7 @@ export function getPoemCount(): number {
 }
 
 export function getPoem(index: number): string {
-	const key = `../poems/poema.${index}.md`;
+	const key = `../poems/pesna.${index}.md`;
 	if (!(key in poemFiles)) {
 		throw new Error(`Poem ${index} not found`);
 	}

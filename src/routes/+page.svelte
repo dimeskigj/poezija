@@ -209,8 +209,8 @@
 		>
 			<h4 class="mb-4 text-start text-xl text-slate-700 dark:text-slate-200">За апликацијата ✒️</h4>
 			<p class="mb-4 text-start">
-				Ова е едноставна апликација која прикажува случајна поема секој ден. Визијата е да се
-				споделуваат македонски поеми во едноставен формат со цел да се поттикне читањето (и некому
+				Ова е едноставна апликација која прикажува случајна песна секој ден. Визијата е да се
+				споделуваат македонски песни во едноставен формат со цел да се поттикне читањето (и некому
 				да се разубави денот).
 			</p>
 			<div class="flex justify-start gap-1">
@@ -230,7 +230,7 @@
 			class="pointer-events-none fixed right-0 bottom-4 left-0 flex justify-center px-4"
 		>
 			<div class="pointer-events-auto">
-				<Notice onclose={onNoticeClosed}>Можеш да дојдеш утре за нова поема!</Notice>
+				<Notice onclose={onNoticeClosed}>Можеш да дојдеш утре за нова песна!</Notice>
 			</div>
 		</div>
 	{/if}
